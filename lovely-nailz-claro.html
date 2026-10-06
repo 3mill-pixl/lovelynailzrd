@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lovely Nailz | Escuela y Productos Profesionales de Uñas en RD</title>
+<meta name="description" content="Lovely Nailz: escuela de uñas y productos profesionales en República Dominicana. Cursos presenciales y online, envíos a nivel nacional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fffafc; --bg2:#f6f1fb; --card:#ffffff; --line:rgba(40,30,80,.14);
+  --lav:#7c6cf2; --lav-d:#6556e0; --lav-l:#6556e0;
+  --pink:#ffc4da; --pink-d:#e0558e; --ink:#18181b; --muted:#6b6b78; --txt:#1f1f27;
+  --script:'Great Vibes','Brush Script MT',cursive;
+  --sans:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+svg{display:block}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+
+/* barra superior */
+.topbar{background:var(--pink);color:var(--ink);text-align:center;font-size:14px;padding:12px 16px}
+.topbar b{font-weight:600}
+.topbar a{text-decoration:underline;margin-left:6px}
+
+/* header */
+header{background:var(--bg);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
+.head{display:flex;align-items:center;gap:22px;padding:18px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand-name{font-family:var(--script);font-size:34px;line-height:1;color:var(--txt)}
+.catbtn{display:flex;align-items:center;gap:8px;background:none;border:0;color:var(--txt);font-size:16px;flex:none}
+.search{flex:1;display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:999px;padding:0 20px;height:50px;background:var(--bg2);min-width:0}
+.search svg{flex:none;color:var(--muted)}
+.search input{flex:1;background:none;border:0;outline:0;color:var(--txt);font:inherit;font-size:16px;min-width:0}
+.search input::placeholder{color:var(--muted)}
+.hlinks{display:flex;align-items:center;gap:14px;flex:none}
+.hlinks .lnk{display:flex;align-items:center;gap:8px;font-size:15px}
+.hlinks .lnk svg{color:var(--pink-d)}
+.pillbtn{border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--txt);padding:0 24px;height:50px;font-size:16px;display:inline-flex;align-items:center;justify-content:center;transition:.2s}
+.pillbtn:hover{border-color:var(--lav-l);color:var(--lav-l)}
+.pillbtn.solid{background:var(--lav);border-color:var(--lav);color:#fff}
+.pillbtn.solid:hover{background:var(--lav-d);color:#fff}
+.iconbtn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:0;background:none;color:var(--txt)}
+.iconbtn:hover{color:var(--pink-d)}
+.cats{display:flex;justify-content:center;gap:clamp(14px,2.2vw,30px);padding:10px 0 14px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cats a{font-size:16px;color:var(--txt);padding:4px 0;border-bottom:2px solid transparent}
+.cats a:hover{border-color:var(--lav-l)}
+.cats a.sale{color:var(--pink-d)}
+
+/* franja de fotos */
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:20px 20px 0}
+.tile{aspect-ratio:3/3.7;border-radius:6px;position:relative;overflow:hidden;display:grid;place-items:end center;padding:18px;text-align:center;font-size:13px;color:rgba(255,255,255,.85)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile::before{content:"";position:absolute;width:42%;height:62%;left:50%;top:14%;transform:translateX(-50%) rotate(14deg);background:rgba(255,255,255,.14);border-radius:60% 40% 60% 40%/70% 50% 50% 30%}
+.tile span{position:relative}
+.t1{background:linear-gradient(160deg,#ffc4da,#9a7bff)}
+.t2{background:linear-gradient(160deg,#ff8fb8,#4b3fb5)}
+.t3{background:linear-gradient(160deg,#d9d3ff,#ff9ec4)}
+.t4{background:linear-gradient(160deg,#7c6cf2,#ffc4da)}
+.t5{background:linear-gradient(160deg,#ffb2d0,#3b3290)}
+
+/* cabecera de marca */
+.profile{display:flex;align-items:flex-start;gap:26px;padding:44px 0 26px;position:relative}
+.logo{width:118px;height:118px;border-radius:50%;background:#fff;border:5px solid var(--lav);display:grid;place-items:center;flex:none;position:relative;overflow:hidden}
+.logo::before{content:"";position:absolute;width:34px;height:68px;background:var(--pink-d);border-radius:60% 40% 60% 40%/70% 50% 50% 30%;transform:rotate(18deg);left:42px;top:16px;opacity:.9}
+.logo span{position:relative;font-family:var(--script);font-size:62px;color:#111;line-height:1;margin-top:-4px}
+.logo b{position:relative;font:700 34px var(--sans);color:#111;margin:10px 0 0 -6px}
+.logo.sm{width:48px;height:48px;border-width:3px}
+.logo.sm::before{width:15px;height:30px;left:15px;top:7px}
+.logo.sm span{font-size:25px;margin-top:-2px}
+.logo.sm b{font-size:15px;margin:4px 0 0 -3px}
+.pinfo{flex:1;min-width:0}
+.pinfo h1{font-size:34px;font-weight:600;letter-spacing:.01em;line-height:1.2;margin-bottom:6px}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:18px;color:#3a3a46}
+.meta .dot{color:var(--muted)}
+.meta .shield{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--txt)}
+.meta .shield svg{color:var(--pink-d)}
+.meta a{text-decoration:underline;text-underline-offset:3px}
+.pactions{display:flex;gap:14px;position:relative;flex:none}
+.circle{width:50px;height:50px;padding:0;border-radius:50%}
+.menu{position:absolute;right:0;top:66px;width:300px;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:0 18px 50px -10px rgba(60,40,120,.28);padding:12px 6px;display:none;z-index:20}
+.menu.open{display:block}
+.menu button,.menu a{display:flex;width:100%;align-items:center;gap:18px;padding:16px 20px;background:none;border:0;color:var(--txt);font-size:18px;text-align:left;border-radius:8px}
+.menu button:hover,.menu a:hover{background:rgba(124,108,242,.09)}
+.menu svg{color:var(--lav-l);flex:none}
+
+/* aviso */
+.notice{display:flex;align-items:center;gap:16px;background:rgba(124,108,242,.10);border:1px solid rgba(124,108,242,.28);border-radius:8px;padding:18px 22px;font-size:20px;font-weight:500;margin-bottom:26px}
+.notice svg{color:var(--pink-d);flex:none}
+.notice a{margin-left:auto;text-decoration:underline;font-size:16px;white-space:nowrap}
+
+/* tarjetas beneficios */
+.perks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;max-width:900px;margin-bottom:60px}
+.perk{display:flex;align-items:center;gap:22px;border:1px solid var(--line);border-radius:8px;padding:26px 30px;background:var(--bg2)}
+.perk .ic{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;flex:none}
+.ic.pk{background:rgba(255,143,184,.18);color:var(--pink-d)}
+.ic.lv{background:rgba(124,108,242,.22);color:var(--lav-l)}
+.perk b{display:block;font-size:20px;font-weight:600;line-height:1.3}
+.perk span{font-size:17px;color:#4a4a57}
+.perk a{text-decoration:underline;text-underline-offset:3px;margin-left:6px;color:var(--txt)}
+
+/* catálogo */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.sec-head h2{font-family:var(--script);font-weight:400;font-size:clamp(42px,5vw,60px);line-height:1}
+.tabs{display:flex;gap:10px;flex-wrap:wrap}
+.tab{height:44px;padding:0 22px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--txt);font-size:15px}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-bottom:70px}
+.card{display:flex;flex-direction:column;gap:12px}
+.card .img{aspect-ratio:1/1;border-radius:6px;position:relative;overflow:hidden;display:grid;place-items:center;font-size:13px;color:rgba(255,255,255,.85)}
+.card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card .img::before{content:"";position:absolute;width:30%;height:52%;transform:rotate(14deg);background:rgba(255,255,255,.14);border-radius:60% 40% 60% 40%/70% 50% 50% 30%}
+.card h3{font-size:16px;font-weight:500;line-height:1.35}
+.card p{font-size:14px;color:var(--muted);margin-top:-8px}
+.card .go{align-self:flex-start;font-size:14px;text-decoration:underline;text-underline-offset:3px;color:var(--lav-l)}
+.g1{background:linear-gradient(150deg,#ffc4da,#a38bff)}
+.g2{background:linear-gradient(150deg,#7c6cf2,#ffb2d0)}
+.g3{background:linear-gradient(150deg,#ff8fb8,#5a4cd0)}
+.g4{background:linear-gradient(150deg,#d9d3ff,#ff9ec4)}
+.hidden{display:none!important}
+.empty{grid-column:1/-1;color:var(--muted);padding:30px 0}
+
+/* testimonio */
+.testi{position:relative;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:90px 0;text-align:center;overflow:hidden}
+.feather{position:absolute;width:90px;height:170px;background:var(--pink-d);opacity:.13;border-radius:60% 40% 60% 40%/70% 50% 50% 30%}
+.f1{left:7%;top:12%;transform:rotate(-20deg)}
+.f2{right:8%;bottom:10%;transform:rotate(25deg);background:var(--lav);opacity:.2}
+.f3{right:22%;top:9%;width:50px;height:95px;transform:rotate(40deg)}
+.testi .wrap{position:relative;max-width:800px}
+.avatar{width:92px;height:92px;border-radius:50%;margin:0 auto 24px;background:linear-gradient(135deg,var(--pink-d),var(--lav));box-shadow:0 0 0 3px var(--bg2),0 0 0 5px var(--lav-l);display:grid;place-items:center;font-family:var(--script);font-size:38px;color:#fff;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.testi blockquote{font-family:var(--script);font-size:clamp(32px,4.8vw,52px);line-height:1.2;margin-bottom:18px}
+.testi cite{display:block;font-style:normal;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-d);margin-bottom:30px}
+
+/* footer */
+footer{padding:80px 0 0}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:start}
+footer h2{font-family:var(--script);font-weight:400;font-size:clamp(42px,5vw,58px);line-height:1.05;margin-bottom:12px}
+footer h4{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--lav-l);margin:26px 0 10px;font-weight:600}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chips span,.chips a{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;border:1px solid var(--line);font-size:15px;background:var(--bg2)}
+.chips a:hover{border-color:var(--lav-l);color:var(--lav-l)}
+.info{display:grid;gap:12px;color:#4a4a57}
+.info div{display:flex;gap:12px;align-items:center}
+.info .ico{width:38px;height:38px;border-radius:50%;background:var(--card);display:grid;place-items:center;color:var(--lav-l);flex:none}
+.info a:hover{color:var(--pink-d)}
+form{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:32px;display:grid;gap:16px}
+form h3{font-size:20px;font-weight:600}
+label{display:grid;gap:6px;font-size:13px;color:var(--muted)}
+input.f,select,textarea{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--txt);font:inherit;font-size:15px}
+input.f:focus,select:focus,textarea:focus{outline:2px solid var(--lav);border-color:transparent}
+textarea{min-height:96px;resize:vertical}
+.copy{margin-top:64px;padding:22px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(37,211,102,.7);transition:.25s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+@media(max-width:1000px){
+  .catbtn,.hlinks .lnk{display:none}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .perks{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .head{flex-wrap:wrap;gap:12px}
+  .search{order:3;flex-basis:100%}
+  .hlinks{margin-left:auto}
+  .pillbtn.hide-sm{display:none}
+  .strip{display:flex;overflow-x:auto;padding:16px;scroll-snap-type:x mandatory}
+  .tile{flex:0 0 62%;scroll-snap-align:start}
+  .profile{flex-wrap:wrap;gap:18px;padding-top:30px}
+  .logo{width:92px;height:92px}
+  .logo::before{width:26px;height:52px;left:32px;top:12px}
+  .logo span{font-size:48px}.logo b{font-size:26px}
+  .pinfo{flex-basis:calc(100% - 120px)}
+  .pinfo h1{font-size:26px}.meta{font-size:15px}
+  .pactions{width:100%}
+  .menu{right:auto;left:0;width:min(300px,100%)}
+  .notice{font-size:16px;flex-wrap:wrap}.notice a{margin-left:0}
+  .perk{padding:20px;gap:16px}
+  .contact{grid-template-columns:1fr}
+  .wrap{width:min(1240px,100% - 32px)}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><b>Inscripciones abiertas</b> — consulta las próximas fechas de cursos por WhatsApp. <a href="https://wa.me/18099193211?text=Hola%2C%20quiero%20saber%20las%20fechas%20de%20inscripci%C3%B3n" target="_blank" rel="noopener">Ver más</a></div>
+
+<header>
+  <div class="wrap">
+    <div class="head">
+      <a href="#inicio" class="brand" aria-label="Lovely Nailz">
+        <div class="logo sm"><span>L</span><b>N</b></div>
+        <span class="brand-name">Lovely Nailz</span>
+      </a>
+      <button class="catbtn" id="catToggle" type="button">Todas las categorías
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <label class="search" style="display:flex">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Buscar cursos o productos" autocomplete="off">
+      </label>
+      <div class="hlinks">
+        <a class="lnk" href="#catalogo"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 6l-4.2 5L22 12l-6.2 1L20 18l-6.2-2.2L12 22l-1.8-6.2L4 18l4.2-5L2 12l6.2-1L4 6l6.2 2.2z"/></svg>Lo nuevo</a>
+        <a class="pillbtn solid hide-sm" href="#formacion" style="text-decoration:none">¡Inscríbete!</a>
+        <a class="iconbtn" href="https://wa.me/18099193211" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 01-13.4 7.8L3 21l1.3-4.4A9 9 0 1121 12z"/></svg></a>
+      </div>
+    </div>
+    <nav class="cats" id="cats">
+      <a href="#formacion">Cursos</a>
+      <a href="#catalogo" data-tab="cursos">Presenciales</a>
+      <a href="#catalogo" data-tab="cursos">Online</a>
+      <a href="#productos" data-tab="productos">Productos</a>
+      <a href="#catalogo" data-tab="productos">Geles</a>
+      <a href="#catalogo" data-tab="productos">Novedades</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Sucursales</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#formacion" class="sale">Inscripciones</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- Franja de 5 fotos: reemplazar cada .tile por <img src="..."> con fotos reales -->
+  <section class="strip" aria-label="Galería">
+    <div class="tile t1"><span>Foto 1 · Uñas</span></div>
+    <div class="tile t2"><span>Foto 2 · Clase</span></div>
+    <div class="tile t3"><span>Foto 3 · Producto</span></div>
+    <div class="tile t4"><span>Foto 4 · Alumnas</span></div>
+    <div class="tile t5"><span>Foto 5 · Trabajo final</span></div>
+  </section>
+
+  <div class="wrap">
+    <section class="profile" id="formacion">
+      <div class="logo"><span>L</span><b>N</b></div>
+      <div class="pinfo">
+        <h1>LOVELY NAILZ</h1>
+        <div class="meta">
+          <span class="shield"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/></svg>Escuela No. 1 de uñas en RD</span>
+          <span class="dot">·</span><span>Santo Domingo, Santiago y más</span>
+          <span class="dot">·</span><span>Cursos presenciales y online</span>
+        </div>
+        <div class="meta" style="margin-top:6px">
+          <a href="#productos">Envíos</a><span class="dot">·</span><span>A nivel nacional</span>
+        </div>
+      </div>
+      <div class="pactions">
+        <a class="pillbtn" href="https://www.instagram.com/lovelynailzrd" target="_blank" rel="noopener">Seguir</a>
+        <a class="pillbtn circle" href="https://wa.me/18099193211?text=Hola%20Lovely%20Nailz%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Chat por WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 01-13.4 7.8L3 21l1.3-4.4A9 9 0 1121 12z"/></svg></a>
+        <button class="pillbtn circle" id="kebab" type="button" aria-label="Más opciones" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg></button>
+        <div class="menu" id="menu" role="menu">
+          <button type="button" id="share"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15V3M8 7l4-4 4 4M5 11v9h14v-9"/></svg><span id="shareTxt">Compartir</span></button>
+          <a href="https://wa.me/18099193211?text=Hola%2C%20busco%20un%20producto%20que%20no%20veo%20en%20la%20p%C3%A1gina" target="_blank" rel="noopener"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l1 13H5zM9 8V6a3 3 0 016 0v2"/></svg>Solicitar un producto</a>
+          <a href="mailto:lovelynailzrd@hotmail.com"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Escribir por correo</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="notice">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 6l-4.2 5L22 12l-6.2 1L20 18l-6.2-2.2L12 22l-1.8-6.2L4 18l4.2-5L2 12l6.2-1L4 6l6.2 2.2z"/></svg>
+      <span>Eleva tu arte y tu carrera: inscripciones abiertas</span>
+      <a href="https://wa.me/18099193211?text=Hola%2C%20quiero%20ver%20cursos%20y%20fechas%20de%20inscripci%C3%B3n" target="_blank" rel="noopener">¡Ver Cursos y Fechas de Inscripción!</a>
+    </div>
+
+    <section class="perks" id="productos">
+      <div class="perk">
+        <div class="ic pk"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 5-9 5-9-5zM7 11v5c0 1.5 2.2 3 5 3s5-1.5 5-3v-5"/></svg></div>
+        <div><b>Cursos presenciales y online</b><span>Diversos módulos <a href="#catalogo" data-tab="cursos">Explorar cursos</a></span></div>
+      </div>
+      <div class="perk">
+        <div class="ic lv"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7zM7 19a1.8 1.8 0 100-.01M17 19a1.8 1.8 0 100-.01"/></svg></div>
+        <div><b>Envíos a nivel nacional</b><span>Pioneros en innovación <a href="https://www.instagram.com/lovelynailz_products" target="_blank" rel="noopener">Ver catálogo</a></span></div>
+      </div>
+    </section>
+
+    <section id="catalogo">
+      <div class="sec-head">
+        <h2>Catálogo</h2>
+        <div class="tabs" role="tablist">
+          <button class="tab on" data-tab="todo" type="button">Todo</button>
+          <button class="tab" data-tab="cursos" type="button">Cursos</button>
+          <button class="tab" data-tab="productos" type="button">Productos</button>
+        </div>
+      </div>
+      <!-- Editar títulos/descripciones y reemplazar los .img por <img> reales -->
+      <div class="grid" id="grid">
+        <article class="card" data-type="cursos" data-text="curso presencial uñas formación módulos">
+          <div class="img g1"><span>Foto curso</span></div>
+          <h3>Curso presencial</h3><p>Clases en sede con práctica guiada</p>
+          <a class="go" href="https://wa.me/18099193211?text=Hola%2C%20quiero%20info%20del%20curso%20presencial" target="_blank" rel="noopener">Consultar fechas</a>
+        </article>
+        <article class="card" data-type="cursos" data-text="curso online uñas formación módulos">
+          <div class="img g2"><span>Foto curso</span></div>
+          <h3>Curso online</h3><p>Aprende desde donde estés</p>
+          <a class="go" href="https://wa.me/18099193211?text=Hola%2C%20quiero%20info%20del%20curso%20online" target="_blank" rel="noopener">Consultar fechas</a>
+        </article>
+        <article class="card" data-type="cursos" data-text="módulos avanzados técnicas uñas">
+          <div class="img g3"><span>Foto módulo</span></div>
+          <h3>Módulos de especialización</h3><p>Diversos módulos para seguir creciendo</p>
+          <a class="go" href="https://wa.me/18099193211?text=Hola%2C%20quiero%20info%20de%20los%20m%C3%B3dulos" target="_blank" rel="noopener">Consultar módulos</a>
+        </article>
+        <article class="card" data-type="productos" data-text="gel poking blanco geles producto">
+          <div class="img g4"><span>Foto producto</span></div>
+          <h3>Gel Poking Blanco</h3><p>Producto profesional</p>
+          <a class="go" href="https://wa.me/18099193211?text=Hola%2C%20quiero%20el%20Gel%20Poking%20Blanco" target="_blank" rel="noopener">Consultar precio</a>
+        </article>
+        <article class="card" data-type="productos" data-text="geles acrílicos productos novedades">
+          <div class="img g2"><span>Foto producto</span></div>
+          <h3>Geles y acrílicos</h3><p>Línea profesional</p>
+          <a class="go" href="https://www.instagram.com/lovelynailz_products" target="_blank" rel="noopener">Ver en Instagram</a>
+        </article>
+        <article class="card" data-type="productos" data-text="herramientas accesorios productos">
+          <div class="img g1"><span>Foto producto</span></div>
+          <h3>Herramientas y accesorios</h3><p>Todo para tu estación de trabajo</p>
+          <a class="go" href="https://www.instagram.com/lovelynailz_products" target="_blank" rel="noopener">Ver en Instagram</a>
+        </article>
+        <article class="card" data-type="productos" data-text="novedades nuevos productos lanzamientos">
+          <div class="img g3"><span>Foto producto</span></div>
+          <h3>Novedades</h3><p>Lo último en innovación</p>
+          <a class="go" href="https://www.instagram.com/lovelynailz_products" target="_blank" rel="noopener">Ver novedades</a>
+        </article>
+        <article class="card" data-type="productos" data-text="catálogo completo productos">
+          <div class="img g4"><span>Catálogo</span></div>
+          <h3>Catálogo completo</h3><p>Pedidos con envío nacional</p>
+          <a class="go" href="https://wa.me/18099193211?text=Hola%2C%20quiero%20ver%20el%20cat%C3%A1logo%20completo" target="_blank" rel="noopener">Ver Catálogo Completo</a>
+        </article>
+        <p class="empty hidden" id="empty">No encontramos resultados. Escríbenos por WhatsApp y te ayudamos.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="testi" id="testimonios">
+    <span class="feather f1"></span><span class="feather f2"></span><span class="feather f3"></span>
+    <div class="wrap">
+      <div class="avatar">L</div>
+      <blockquote>“Gracias a Lovely Nailz, mi pasión se convirtió en mi negocio. ¡Inscríbete hoy!”</blockquote>
+      <cite>— Alumna Lovely Nailz</cite>
+      <a class="pillbtn solid" href="https://wa.me/18099193211?text=Hola%2C%20quiero%20inscribirme%20en%20un%20curso" target="_blank" rel="noopener">Quiero inscribirme</a>
+    </div>
+  </section>
+</main>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>Hablemos</h2>
+        <p style="color:#4a4a57">Escríbenos y te ayudamos con cursos, fechas de inscripción y pedidos.</p>
+        <h4>Sucursales</h4>
+        <div class="chips"><span>📍 Santo Domingo</span><span>📍 Santiago</span><span>📍 Y más sedes</span></div>
+        <h4>Contacto</h4>
+        <div class="info">
+          <div><span class="ico">✆</span><a href="https://wa.me/18099193211" target="_blank" rel="noopener">+1 809-919-3211</a></div>
+          <div><span class="ico">✉</span><a href="mailto:lovelynailzrd@hotmail.com">lovelynailzrd@hotmail.com</a></div>
+        </div>
+        <h4>Síguenos</h4>
+        <div class="chips">
+          <a href="https://www.instagram.com/lovelynailzrd" target="_blank" rel="noopener">@lovelynailzrd</a>
+          <a href="https://www.instagram.com/lovelynailz_products" target="_blank" rel="noopener">@lovelynailz_products</a>
+        </div>
+      </div>
+      <form id="f">
+        <h3>Contacto rápido</h3>
+        <label>Nombre<input class="f" id="n" required placeholder="Tu nombre"></label>
+        <label>Me interesa
+          <select id="i"><option>Cursos y fechas de inscripción</option><option>Productos y catálogo</option><option>Otra consulta</option></select>
+        </label>
+        <label>Mensaje<textarea id="m" placeholder="Cuéntanos en qué podemos ayudarte"></textarea></label>
+        <button class="pillbtn solid" type="submit">Enviar por WhatsApp</button>
+      </form>
+    </div>
+    <div class="copy"><span>© <span id="y"></span> Lovely Nailz. Todos los derechos reservados.</span><span>República Dominicana</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/18099193211?text=Hola%20Lovely%20Nailz%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+  $('#y').textContent=new Date().getFullYear();
+
+  // menú de 3 puntos
+  var kebab=$('#kebab'),menu=$('#menu');
+  kebab.addEventListener('click',function(e){e.stopPropagation();var o=menu.classList.toggle('open');kebab.setAttribute('aria-expanded',o)});
+  document.addEventListener('click',function(e){if(!menu.contains(e.target))menu.classList.remove('open')});
+  $('#share').addEventListener('click',function(){
+    var url=location.href.split('#')[0],t=$('#shareTxt');
+    if(navigator.share){navigator.share({title:'Lovely Nailz',url:url}).catch(function(){});return}
+    if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){t.textContent='¡Enlace copiado!';setTimeout(function(){t.textContent='Compartir'},1800)})}
+  });
+
+  // catálogo: pestañas + búsqueda
+  var tab='todo',cards=$$('.card'),empty=$('#empty'),q=$('#q');
+  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+  function apply(){
+    var term=norm(q.value.trim()),shown=0;
+    cards.forEach(function(c){
+      var ok=(tab==='todo'||c.dataset.type===tab)&&(!term||norm(c.textContent+' '+c.dataset.text).indexOf(term)>-1);
+      c.classList.toggle('hidden',!ok);if(ok)shown++;
+    });
+    empty.classList.toggle('hidden',shown>0);
+    $$('.tab').forEach(function(b){b.classList.toggle('on',b.dataset.tab===tab)});
+  }
+  function setTab(t){tab=t;apply()}
+  $$('.tab').forEach(function(b){b.addEventListener('click',function(){setTab(b.dataset.tab)})});
+  $$('[data-tab]').forEach(function(a){if(a.tagName==='A')a.addEventListener('click',function(){setTab(a.dataset.tab)})});
+  q.addEventListener('input',function(){apply();if(q.value)$('#catalogo').scrollIntoView({behavior:'smooth',block:'start'})});
+  $('#catToggle').addEventListener('click',function(){$('#cats').scrollIntoView({behavior:'smooth'})});
+
+  // formulario → WhatsApp
+  $('#f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var m=$('#m').value,t='Hola Lovely Nailz, soy '+$('#n').value+'. Me interesa: '+$('#i').value+'.'+(m?' '+m:'');
+    window.open('https://wa.me/18099193211?text='+encodeURIComponent(t),'_blank');
+  });
+})();
+</script>
+</body>
+</html>
